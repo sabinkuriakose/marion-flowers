@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marion Flowers & Decor – Ambelipadam, Vytilla, Ernakulam</title>
+  <meta name="description" content="Marion Flowers & Decor – Premium floral arrangements, car decoration, cemetery decoration, institutional decoration, wedding & event floral services in Vytilla, Ernakulam, Kerala."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:  #1a2e1a;
+      --green-mid:   #2e4d2e;
+      --green-soft:  #4a7a4a;
+      --green-light: #8ab88a;
+      --cream:       #f7f2ea;
+      --cream-warm:  #efe8d8;
+      --gold:        #c9a84c;
+      --gold-light:  #e8c97a;
+      --text-dark:   #1a1a18;
+      --text-mid:    #4a4840;
+      --text-light:  #7a7670;
+      --white:       #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(247,242,234,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(26,46,26,0.08); }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600; letter-spacing: 0.04em;
+      color: var(--green-deep); text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-mid); text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--green-deep); }
+
+    .nav-cta {
+      background: var(--green-deep); color: var(--cream) !important;
+      padding: 0.55rem 1.4rem; border-radius: 2px;
+      transition: background 0.3s !important;
+    }
+    .nav-cta:hover { background: var(--green-mid) !important; color: var(--cream) !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--green-deep); transition: 0.3s; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 3rem 6rem 4rem;
+      background: var(--cream);
+      position: relative;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute; right: -1px; top: 10%; height: 80%;
+      width: 1px; background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    }
+
+    .hero-tag {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.4rem;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--green-deep);
+      margin-bottom: 1.8rem;
+      opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--gold); }
+
+    .hero-desc {
+      font-size: 1rem; font-weight: 300; line-height: 1.8;
+      color: var(--text-mid); max-width: 420px;
+      margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-btns {
+      display: flex; gap: 1.2rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+    }
+    .btn-primary {
+      background: var(--green-deep); color: var(--cream);
+      padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 2px;
+      transition: background 0.3s, transform 0.3s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
+
+    .btn-secondary {
+      border: 1px solid var(--green-deep); color: var(--green-deep);
+      padding: 0.9rem 2.2rem; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border-radius: 2px;
+      transition: all 0.3s; display: inline-block;
+    }
+    .btn-secondary:hover { background: var(--green-deep); color: var(--cream); transform: translateY(-2px); }
+
+    .hero-location {
+      margin-top: 3rem; font-size: 0.78rem; color: var(--text-light);
+      letter-spacing: 0.08em;
+      opacity: 0; animation: fadeUp 0.8s 1s forwards;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-location::before {
+      content: '◆'; color: var(--gold); font-size: 0.5rem;
+    }
+
+    .hero-right {
+      background: var(--green-deep);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Decorative botanical SVG bg */
+    .hero-right::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 70%, rgba(138,184,138,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.1) 0%, transparent 50%);
+    }
+
+    .botanical-art {
+      position: relative; z-index: 1;
+      opacity: 0; animation: fadeIn 1.2s 0.6s forwards;
+    }
+
+    /* Leaf decorations */
+    .leaf { position: absolute; opacity: 0.12; }
+
+    .stats-strip {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      display: flex; justify-content: space-around;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      opacity: 0; animation: fadeUp 0.8s 1.2s forwards;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 300; color: var(--gold-light);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(247,242,234,0.6); margin-top: 0.3rem;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 7rem 4rem; }
+    .section-tag {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.8rem; display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 300; line-height: 1.2;
+      color: var(--green-deep); margin-bottom: 1.2rem;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-desc {
+      font-size: 1rem; font-weight: 300; line-height: 1.8;
+      color: var(--text-mid); max-width: 540px;
+    }
+    .divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      margin: 1.5rem 0;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--white);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative; height: 500px;
+    }
+    .about-box {
+      position: absolute; border-radius: 2px; overflow: hidden;
+    }
+    .about-box-1 {
+      top: 0; left: 0; width: 70%; height: 75%;
+      background: var(--green-mid);
+    }
+    .about-box-2 {
+      bottom: 0; right: 0; width: 55%; height: 55%;
+      background: var(--green-light); opacity: 0.4;
+    }
+    .about-box-accent {
+      position: absolute; bottom: 20%; left: 60%;
+      width: 60px; height: 60px;
+      background: var(--gold); opacity: 0.7; border-radius: 50%;
+      filter: blur(20px);
+    }
+    .about-svg {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+    .about-quote {
+      position: absolute; bottom: 2rem; left: 1.5rem; right: 30%;
+      background: var(--cream); padding: 1.5rem;
+      border-left: 3px solid var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-style: italic;
+      color: var(--green-deep); z-index: 3;
+      box-shadow: 0 8px 32px rgba(26,46,26,0.1);
+    }
+
+    .about-text { }
+    .about-features { margin-top: 2.5rem; display: grid; gap: 1.4rem; }
+    .about-feat {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+    }
+    .feat-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--cream-warm); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .feat-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-weight: 600; color: var(--green-deep);
+      margin-bottom: 0.2rem;
+    }
+    .feat-body p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+
+    /* ─── SERVICES ─── */
+    #services {
+      background: var(--cream);
+    }
+    .services-header { text-align: center; margin-bottom: 4rem; }
+    .services-header .section-desc { margin: 0 auto; }
+    .services-header .divider { margin: 1.5rem auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--white); border-radius: 3px;
+      padding: 2.5rem 2rem;
+      border: 1px solid transparent;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+      cursor: default;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(to right, var(--gold), var(--green-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover {
+      border-color: rgba(201,168,76,0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(26,46,26,0.08);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      font-size: 2.2rem; margin-bottom: 1.4rem; display: block;
+    }
+    .service-num {
+      position: absolute; top: 1.5rem; right: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem; font-weight: 300;
+      color: rgba(26,46,26,0.05); line-height: 1;
+    }
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 600; color: var(--green-deep);
+      margin-bottom: 0.7rem;
+    }
+    .service-card p {
+      font-size: 0.9rem; color: var(--text-light);
+      line-height: 1.7; font-weight: 300;
+    }
+
+    /* ─── GALLERY ─── */
+    #gallery {
+      background: var(--green-deep); color: var(--cream);
+      padding: 7rem 4rem;
+    }
+    #gallery .section-title { color: var(--cream); }
+    .gallery-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(2, 220px);
+      gap: 1rem;
+    }
+    .g-item {
+      border-radius: 2px; overflow: hidden;
+      position: relative; display: flex; align-items: flex-end;
+      transition: transform 0.4s;
+    }
+    .g-item:hover { transform: scale(1.02); }
+    .g-item:nth-child(1) { grid-column: 1/5; grid-row: 1/3; }
+    .g-item:nth-child(2) { grid-column: 5/8; grid-row: 1; }
+    .g-item:nth-child(3) { grid-column: 8/13; grid-row: 1; }
+    .g-item:nth-child(4) { grid-column: 5/9; grid-row: 2; }
+    .g-item:nth-child(5) { grid-column: 9/13; grid-row: 2; }
+
+    .g-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+    }
+    .g-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,46,26,0.7) 0%, transparent 60%);
+    }
+    .g-label {
+      position: relative; z-index: 1; padding: 1.2rem;
+      font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(247,242,234,0.8);
+    }
+
+    /* gallery placeholder colors */
+    .g-item:nth-child(1) .g-bg { background-color: #2e4d2e; background-image: radial-gradient(ellipse at 40% 60%, #4a7a4a 0%, #1a2e1a 70%); }
+    .g-item:nth-child(2) .g-bg { background-color: #3d5c3d; background-image: radial-gradient(ellipse at 60% 40%, #5a8a5a, #2e4d2e); }
+    .g-item:nth-child(3) .g-bg { background-color: #c9a84c; background-image: radial-gradient(ellipse, #e8c97a 0%, #9a7830 80%); }
+    .g-item:nth-child(4) .g-bg { background-color: #4a7a4a; background-image: radial-gradient(ellipse at 30% 70%, #6aa06a, #2e4d2e); }
+    .g-item:nth-child(5) .g-bg { background-color: #2a3a2a; background-image: radial-gradient(ellipse at 70% 30%, #4a7a4a, #1a2e1a); }
+
+    .gallery-note {
+      margin-top: 1.5rem;
+      font-size: 0.82rem; color: rgba(247,242,234,0.45);
+      text-align: center; letter-spacing: 0.05em;
+    }
+
+    /* ─── OCCASIONS ─── */
+    #occasions { background: var(--cream-warm); }
+    .occasions-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin-top: 3rem;
+    }
+    .occasion-pill {
+      display: flex; align-items: center; gap: 0.9rem;
+      background: var(--white); padding: 1.1rem 1.4rem;
+      border-radius: 50px;
+      border: 1px solid rgba(201,168,76,0.2);
+      font-size: 0.9rem; color: var(--text-dark);
+      transition: all 0.3s;
+    }
+    .occasion-pill:hover {
+      background: var(--green-deep); color: var(--cream);
+      transform: translateX(6px);
+      border-color: transparent;
+    }
+    .occasion-pill:hover .pill-icon { filter: grayscale(1) brightness(10); }
+    .pill-icon { font-size: 1.2rem; }
+
+    /* ─── PROCESS ─── */
+    #process { background: var(--white); }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2rem; margin-top: 4rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute; top: 24px; left: 12.5%; right: 12.5%;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), var(--green-light), var(--gold));
+    }
+    .step { text-align: center; position: relative; }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green-deep); color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 300;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem; position: relative; z-index: 1;
+      box-shadow: 0 0 0 6px var(--white), 0 0 0 7px rgba(201,168,76,0.3);
+    }
+    .step h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 600; color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+    .step p { font-size: 0.87rem; color: var(--text-light); line-height: 1.6; }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--green-deep);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; min-height: 580px;
+    }
+    .contact-left {
+      padding: 6rem 4rem;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid rgba(201,168,76,0.15);
+    }
+    .contact-left .section-title { color: var(--cream); }
+    .contact-left .section-desc { color: rgba(247,242,234,0.65); }
+
+    .contact-info { margin-top: 3rem; display: grid; gap: 2rem; }
+    .c-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .c-icon {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .c-body { }
+    .c-label {
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.3rem; font-weight: 500;
+    }
+    .c-value {
+      font-size: 0.95rem; color: var(--cream);
+      line-height: 1.6; font-weight: 300;
+    }
+    .c-value a { color: var(--cream); text-decoration: none; transition: color 0.3s; }
+    .c-value a:hover { color: var(--gold-light); }
+
+    .contact-right {
+      padding: 6rem 4rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .contact-right h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 300; color: var(--cream);
+      margin-bottom: 2rem;
+    }
+
+    .form-group { margin-bottom: 1.4rem; }
+    .form-group label {
+      display: block; font-size: 0.72rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(247,242,234,0.5);
+      margin-bottom: 0.5rem; font-weight: 500;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--cream); padding: 0.85rem 1rem;
+      font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 300;
+      border-radius: 2px; outline: none;
+      transition: border-color 0.3s, background 0.3s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.08);
+    }
+    .form-group select option { background: var(--green-deep); color: var(--cream); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(247,242,234,0.25); }
+
+    .btn-submit {
+      width: 100%; background: var(--gold);
+      color: var(--green-deep); border: none;
+      padding: 1rem; font-family: 'Jost', sans-serif;
+      font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      cursor: pointer; border-radius: 2px;
+      transition: background 0.3s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+    .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--green-deep);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 2.5rem 4rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 600; color: var(--cream);
+    }
+    .footer-brand span { color: var(--gold); }
+    .footer-copy {
+      font-size: 0.78rem; color: rgba(247,242,234,0.35);
+      letter-spacing: 0.05em;
+    }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(247,242,234,0.4); text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+      text-decoration: none; font-size: 1.6rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.5); }
+    .wa-pulse {
+      position: absolute; inset: -4px; border-radius: 50%;
+      border: 2px solid rgba(37,211,102,0.4);
+      animation: pulse 2s infinite;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes pulse {
+      0%   { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    @keyframes floatLeaf {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+    }
+    .float-anim { animation: floatLeaf 6s ease-in-out infinite; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; flex-direction: column; gap: 1.5rem;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--cream); padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      nav .nav-cta { display: none; }
+
+      #hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 320px; display: none; }
+      .hero-left { padding: 5rem 1.5rem 4rem; }
+
+      section { padding: 5rem 1.5rem; }
+      #about { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { height: 300px; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .g-item { grid-column: auto !important; grid-row: auto !important; height: 180px; }
+
+      #contact { grid-template-columns: 1fr; }
+      .contact-left { padding: 4rem 1.5rem 2rem; border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); }
+      .contact-right { padding: 2rem 1.5rem 4rem; }
+
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+
+      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; gap: 0.8rem; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">Marion <span>&</span> Decor</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#occasions">Occasions</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <span class="hero-tag">Est. in Vyttla, Ernakulam</span>
+    <h1 class="hero-title">
+      Where Every<br><em>Bloom</em> Tells<br>a Story
+    </h1>
+    <p class="hero-desc">
+      Marion Flowers & Decor brings the art of floral design to life —
+      from heartfelt bouquets to grand event transformations, crafted with
+      passion for every occasion.
+    </p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#contact" class="btn-secondary">Get a Quote</a>
+    </div>
+    <div class="hero-location">
+      Ambelipadam Road, Vyttla, Amballur, Ernakulam
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!-- Decorative SVG botanical art -->
+    <div class="botanical-art float-anim">
+      <svg width="340" height="420" viewBox="0 0 340 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Large stem -->
+        <path d="M170 400 Q165 300 180 200 Q190 120 160 60" stroke="rgba(138,184,138,0.5)" stroke-width="2.5" fill="none"/>
+        <!-- Left branches -->
+        <path d="M175 280 Q130 250 100 220" stroke="rgba(138,184,138,0.4)" stroke-width="1.5" fill="none"/>
+        <path d="M178 220 Q140 190 110 160" stroke="rgba(138,184,138,0.4)" stroke-width="1.5" fill="none"/>
+        <path d="M175 160 Q135 130 115 100" stroke="rgba(138,184,138,0.35)" stroke-width="1.5" fill="none"/>
+        <!-- Right branches -->
+        <path d="M177 260 Q215 230 245 200" stroke="rgba(138,184,138,0.4)" stroke-width="1.5" fill="none"/>
+        <path d="M180 200 Q218 170 248 145" stroke="rgba(138,184,138,0.4)" stroke-width="1.5" fill="none"/>
+        <path d="M177 140 Q215 110 238 85" stroke="rgba(138,184,138,0.35)" stroke-width="1.5" fill="none"/>
+        <!-- Leaves left -->
+        <ellipse cx="95" cy="215" rx="22" ry="10" fill="rgba(74,122,74,0.5)" transform="rotate(-35 95 215)"/>
+        <ellipse cx="106" cy="155" rx="20" ry="9" fill="rgba(74,122,74,0.45)" transform="rotate(-40 106 155)"/>
+        <ellipse cx="108" cy="95" rx="18" ry="8" fill="rgba(74,122,74,0.4)" transform="rotate(-45 108 95)"/>
+        <!-- Leaves right -->
+        <ellipse cx="248" cy="196" rx="22" ry="10" fill="rgba(74,122,74,0.5)" transform="rotate(35 248 196)"/>
+        <ellipse cx="250" cy="140" rx="20" ry="9" fill="rgba(74,122,74,0.45)" transform="rotate(40 250 140)"/>
+        <ellipse cx="240" cy="82" rx="18" ry="8" fill="rgba(74,122,74,0.4)" transform="rotate(38 240 82)"/>
+        <!-- Main flower -->
+        <circle cx="162" cy="52" r="30" fill="rgba(201,168,76,0.15)"/>
+        <g opacity="0.9">
+          <ellipse cx="162" cy="30" rx="9" ry="16" fill="#c9a84c" opacity="0.7"/>
+          <ellipse cx="162" cy="30" rx="9" ry="16" fill="#c9a84c" opacity="0.7" transform="rotate(45 162 52)"/>
+          <ellipse cx="162" cy="30" rx="9" ry="16" fill="#c9a84c" opacity="0.7" transform="rotate(90 162 52)"/>
+          <ellipse cx="162" cy="30" rx="9" ry="16" fill="#c9a84c" opacity="0.7" transform="rotate(135 162 52)"/>
+          <ellipse cx="162" cy="30" rx="9" ry="16" fill="#e8c97a" opacity="0.5" transform="rotate(22.5 162 52)"/>
+          <ellipse cx="162" cy="30" rx="9" ry="16" fill="#e8c97a" opacity="0.5" transform="rotate(67.5 162 52)"/>
+          <ellipse cx="162" cy="30" rx="9" ry="16" fill="#e8c97a" opacity="0.5" transform="rotate(112.5 162 52)"/>
+          <ellipse cx="162" cy="30" rx="9" ry="16" fill="#e8c97a" opacity="0.5" transform="rotate(157.5 162 52)"/>
+          <circle cx="162" cy="52" r="10" fill="#c9a84c"/>
+          <circle cx="162" cy="52" r="6" fill="#e8c97a"/>
+        </g>
+        <!-- Small side flowers -->
+        <g opacity="0.6" transform="translate(92 205) scale(0.55)">
+          <ellipse cx="0" cy="-18" rx="7" ry="12" fill="#e8c97a"/>
+          <ellipse cx="0" cy="-18" rx="7" ry="12" fill="#e8c97a" transform="rotate(60 0 0)"/>
+          <ellipse cx="0" cy="-18" rx="7" ry="12" fill="#e8c97a" transform="rotate(120 0 0)"/>
+          <circle cx="0" cy="0" r="7" fill="#c9a84c"/>
+        </g>
+        <g opacity="0.6" transform="translate(248 184) scale(0.55)">
+          <ellipse cx="0" cy="-18" rx="7" ry="12" fill="#8ab88a"/>
+          <ellipse cx="0" cy="-18" rx="7" ry="12" fill="#8ab88a" transform="rotate(60 0 0)"/>
+          <ellipse cx="0" cy="-18" rx="7" ry="12" fill="#8ab88a" transform="rotate(120 0 0)"/>
+          <circle cx="0" cy="0" r="6" fill="#4a7a4a"/>
+        </g>
+        <!-- Dots / pollen -->
+        <circle cx="140" cy="70" r="2" fill="rgba(232,201,122,0.6)"/>
+        <circle cx="185" cy="65" r="1.5" fill="rgba(232,201,122,0.5)"/>
+        <circle cx="130" cy="90" r="1.5" fill="rgba(232,201,122,0.4)"/>
+        <circle cx="200" cy="80" r="2" fill="rgba(232,201,122,0.4)"/>
+      </svg>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Events Decorated</div></div>
+      <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years of Craft</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Fresh Blooms</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual reveal">
+    <div class="about-box about-box-1">
+      <svg width="100%" height="100%" viewBox="0 0 300 380" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="rg1" cx="40%" cy="60%">
+            <stop offset="0%" stop-color="#4a7a4a"/>
+            <stop offset="100%" stop-color="#1a2e1a"/>
+          </radialGradient>
+        </defs>
+        <rect width="300" height="380" fill="url(#rg1)"/>
+        <circle cx="150" cy="190" r="80" fill="none" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+        <circle cx="150" cy="190" r="120" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="1"/>
+        <!-- Flower center motif -->
+        <g transform="translate(150,190)">
+          <g opacity="0.5">
+            <ellipse cx="0" cy="-35" rx="10" ry="20" fill="#c9a84c"/>
+            <ellipse cx="0" cy="-35" rx="10" ry="20" fill="#c9a84c" transform="rotate(60 0 0)"/>
+            <ellipse cx="0" cy="-35" rx="10" ry="20" fill="#c9a84c" transform="rotate(120 0 0)"/>
+            <ellipse cx="0" cy="-35" rx="10" ry="20" fill="#c9a84c" transform="rotate(180 0 0)"/>
+            <ellipse cx="0" cy="-35" rx="10" ry="20" fill="#e8c97a" transform="rotate(30 0 0)"/>
+            <ellipse cx="0" cy="-35" rx="10" ry="20" fill="#e8c97a" transform="rotate(90 0 0)"/>
+            <ellipse cx="0" cy="-35" rx="10" ry="20" fill="#e8c97a" transform="rotate(150 0 0)"/>
+            <ellipse cx="0" cy="-35" rx="10" ry="20" fill="#e8c97a" transform="rotate(210 0 0)"/>
+            <circle r="18" fill="#c9a84c"/>
+            <circle r="10" fill="#e8c97a"/>
+          </g>
+        </g>
+        <text x="50%" y="88%" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" fill="rgba(232,201,122,0.5)" letter-spacing="4">MARION FLOWERS</text>
+      </svg>
+    </div>
+    <div class="about-box about-box-2"></div>
+    <div class="about-box-accent"></div>
+    <div class="about-quote">
+      "Every flower is a soul blossoming in nature."
+    </div>
+  </div>
+
+  <div class="about-text reveal">
+    <span class="section-tag">Our Story</span>
+    <h2 class="section-title">Crafting <em>Beauty</em><br>for Every Moment</h2>
+    <div class="divider"></div>
+    <p class="section-desc">
+      Marion Flowers & Decor is Vytilla's trusted name in floral artistry.
+      Nestled in the heart of Ambelipadam, Ernakulam, we bring colour, fragrance,
+      and joy to your most precious moments — from intimate gatherings to grand
+      celebrations, with the freshest blooms sourced daily.
+    </p>
+    <div class="about-features">
+      <div class="about-feat">
+        <div class="feat-icon">🌸</div>
+        <div class="feat-body">
+          <h4>Daily Fresh Flowers</h4>
+          <p>We source the freshest blooms every morning so your arrangements always look and smell their absolute best.</p>
+        </div>
+      </div>
+      <div class="about-feat">
+        <div class="feat-icon">🎨</div>
+        <div class="feat-body">
+          <h4>Custom Designs</h4>
+          <p>Every order is crafted to match your vision, theme, and budget — no two arrangements are ever alike.</p>
+        </div>
+      </div>
+      <div class="about-feat">
+        <div class="feat-icon">🚚</div>
+        <div class="feat-body">
+          <h4>On-Time Delivery</h4>
+          <p>Reliable delivery and on-site setup across Ernakulam, ensuring everything is perfect before your event begins.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <span class="section-tag">What We Offer</span>
+    <h2 class="section-title">Our <em>Floral</em> Services</h2>
+    <div class="divider"></div>
+    <p class="section-desc">
+      From intimate bouquets to large-scale event transformations, we offer a complete range of floral and decoration services tailored to your every need.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">💐</span>
+      <span class="service-num">01</span>
+      <h3>Bouquets & Arrangements</h3>
+      <p>Hand-crafted bouquets for birthdays, anniversaries, proposals, gifting, and every special moment in between. Custom styles — round, cascade, hand-tied, and more.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🚗</span>
+      <span class="service-num">02</span>
+      <h3>Car Decoration</h3>
+      <p>Elegant floral car decoration for weddings, receptions, and VIP events. Fresh flowers and ribbons, beautifully arranged to make every grand arrival memorable.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🕊️</span>
+      <span class="service-num">03</span>
+      <h3>Cemetery & Memorial Decoration</h3>
+      <p>Respectful and heartfelt floral tributes for funerals, remembrance days, and cemetery occasions. Wreaths, crosses, and custom memorial arrangements.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🏢</span>
+      <span class="service-num">04</span>
+      <h3>Institutional Decoration</h3>
+      <p>Beautify offices, hospitals, hotels, schools, and corporate spaces with regular floral arrangements or one-time event setups that leave a lasting impression.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">💒</span>
+      <span class="service-num">05</span>
+      <h3>Wedding Decoration</h3>
+      <p>Complete wedding floral services — stage decoration, mandap florals, aisle arrangements, entrance arches, table centrepieces, and bridal bouquets.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🎉</span>
+      <span class="service-num">06</span>
+      <h3>Event & Stage Decoration</h3>
+      <p>Birthdays, receptions, corporate launches, cultural events — we transform any stage or venue into a stunning floral spectacle, large or intimate.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🏠</span>
+      <span class="service-num">07</span>
+      <h3>Home & Pooja Decoration</h3>
+      <p>Floral decoration for housewarming, Vishu, Onam, Christmas, and all festive occasions. Bring the fragrance and colour of fresh flowers into your home.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🌿</span>
+      <span class="service-num">08</span>
+      <h3>Potted Plants & Gifting</h3>
+      <p>A curated selection of indoor plants, terrariums, and gift hampers — perfect for corporate gifting, housewarmings, and anyone who loves greenery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header">
+    <div>
+      <span class="section-tag">Our Work</span>
+      <h2 class="section-title">Floral <em>Stories</em></h2>
+      <div class="divider"></div>
+    </div>
+    <p style="font-size:0.9rem; color:rgba(247,242,234,0.5); max-width:300px; font-weight:300; line-height:1.7;">
+      A glimpse into the moments we've helped make beautiful. Replace these with your own photos.
+    </p>
+  </div>
+
+  <div class="gallery-grid reveal">
+    <div class="g-item">
+      <div class="g-bg"></div>
+      <div class="g-overlay"></div>
+      <div class="g-label">Wedding Florals</div>
+    </div>
+    <div class="g-item">
+      <div class="g-bg"></div>
+      <div class="g-overlay"></div>
+      <div class="g-label">Bouquets</div>
+    </div>
+    <div class="g-item">
+      <div class="g-bg"></div>
+      <div class="g-overlay"></div>
+      <div class="g-label">Car Decoration</div>
+    </div>
+    <div class="g-item">
+      <div class="g-bg"></div>
+      <div class="g-overlay"></div>
+      <div class="g-label">Stage Decor</div>
+    </div>
+    <div class="g-item">
+      <div class="g-bg"></div>
+      <div class="g-overlay"></div>
+      <div class="g-label">Memorial Wreaths</div>
+    </div>
+  </div>
+  <p class="gallery-note">📸 Add your own photos by replacing the gallery items in the HTML file</p>
+</section>
+
+<!-- OCCASIONS -->
+<section id="occasions">
+  <div class="reveal" style="max-width:700px;">
+    <span class="section-tag">Perfect For</span>
+    <h2 class="section-title">Every <em>Occasion</em> Deserves Flowers</h2>
+    <div class="divider"></div>
+    <p class="section-desc">We create floral magic for all of life's beautiful moments.</p>
+  </div>
+  <div class="occasions-grid reveal">
+    <div class="occasion-pill"><span class="pill-icon">💍</span> Weddings & Receptions</div>
+    <div class="occasion-pill"><span class="pill-icon">🎂</span> Birthdays</div>
+    <div class="occasion-pill"><span class="pill-icon">💒</span> Engagements</div>
+    <div class="occasion-pill"><span class="pill-icon">🏡</span> Housewarming</div>
+    <div class="occasion-pill"><span class="pill-icon">🕊️</span> Funerals & Memorials</div>
+    <div class="occasion-pill"><span class="pill-icon">🏢</span> Corporate Events</div>
+    <div class="occasion-pill"><span class="pill-icon">🎓</span> Graduations</div>
+    <div class="occasion-pill"><span class="pill-icon">🌙</span> Anniversary Dinners</div>
+    <div class="occasion-pill"><span class="pill-icon">🪔</span> Onam & Vishu</div>
+    <div class="occasion-pill"><span class="pill-icon">🎄</span> Christmas</div>
+    <div class="occasion-pill"><span class="pill-icon">🌸</span> Valentine's Day</div>
+    <div class="occasion-pill"><span class="pill-icon">🏨</span> Hotel & Resort Decor</div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 1rem;">
+    <span class="section-tag">How It Works</span>
+    <h2 class="section-title">Simple as <em>Petals</em></h2>
+    <div class="divider" style="margin:1.5rem auto;"></div>
+  </div>
+  <div class="process-steps reveal">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Contact Us</h4>
+      <p>Reach out via phone, WhatsApp, or our contact form with your event details and ideas.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Discuss & Design</h4>
+      <p>We understand your vision, budget, and preferences to craft a bespoke floral plan.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Fresh Preparation</h4>
+      <p>On the day, we source the freshest blooms and prepare your arrangements with care.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Deliver & Setup</h4>
+      <p>We deliver on time and set up everything perfectly, so you can focus on the moment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-left reveal">
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Let's Create<br>Something <em>Beautiful</em></h2>
+    <div class="divider"></div>
+    <p class="section-desc">
+      Have an event coming up? Need a bouquet delivered? We'd love to hear from you.
+    </p>
+
+    <div class="contact-info">
+      <div class="c-item">
+        <div class="c-icon">📍</div>
+        <div class="c-body">
+          <div class="c-label">Location</div>
+          <div class="c-value">Ambelipadam Road, Behind TVS<br>Vyttla, Amballur, Ernakulam</div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">📞</div>
+        <div class="c-body">
+          <div class="c-label">Phone</div>
+          <div class="c-value">
+            <a href="tel:+919447573552">9447573552</a>
+          </div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">💬</div>
+        <div class="c-body">
+          <div class="c-label">DM / WhatsApp</div>
+          <div class="c-value">
+            <a href="https://wa.me/918330080551" target="_blank">+91 8330080551</a>
+          </div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">🕐</div>
+        <div class="c-body">
+          <div class="c-label">Working Hours</div>
+          <div class="c-value">Mon – Sat: 8:00 AM – 8:00 PM<br>Sunday: 9:00 AM – 6:00 PM</div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="c-icon">📧</div>
+        <div class="c-body">
+          <div class="c-label">Email</div>
+          <div class="c-value">
+            <a href="mailto:hello@marionflowers.in">hello@marionflowers.in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right reveal">
+    <h3>Send an Enquiry</h3>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="Full name"/>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+    </div>
+    <div class="form-group">
+      <label>Service Required</label>
+      <select>
+        <option value="" disabled selected>Select a service</option>
+        <option>Bouquets & Arrangements</option>
+        <option>Car Decoration</option>
+        <option>Cemetery / Memorial Decoration</option>
+        <option>Institutional Decoration</option>
+        <option>Wedding Decoration</option>
+        <option>Event & Stage Decoration</option>
+        <option>Home & Pooja Decoration</option>
+        <option>Potted Plants & Gifting</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Event Date (if applicable)</label>
+      <input type="date"/>
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea placeholder="Tell us about your occasion, requirements, or any special requests..."></textarea>
+    </div>
+    <button class="btn-submit" onclick="handleSubmit()">Send Enquiry ✦</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Marion Flowers <span>&</span> Decor</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Marion Flowers & Decor · Ambelipadam Road, Vyttla, Ernakulam</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/918330080551" target="_blank" title="Chat on WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg width="26" height="26" viewBox="0 0 26 26" fill="white"><path d="M13 2C6.925 2 2 6.925 2 13c0 1.99.52 3.858 1.434 5.478L2 24l5.7-1.41A10.94 10.94 0 0013 24c6.075 0 11-4.925 11-11S19.075 2 13 2zm5.8 15.6c-.24.67-1.4 1.28-1.93 1.36-.5.08-1.13.11-1.83-.12-.42-.14-.96-.33-1.65-.64-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06 .98-2.34.26-.28.56-.35.75-.35h.54c.17 0 .4-.07.63.48.23.55.78 1.89.85 2.03.07.14.12.31.02.49-.09.19-.14.3-.27.46-.13.16-.28.36-.4.48-.13.13-.27.27-.12.53.15.26.68 1.12 1.46 1.82 1.01.9 1.86 1.18 2.12 1.31.26.13.41.11.56-.07.15-.18.65-.76.82-1.02.17-.26.35-.22.58-.13.23.09 1.47.69 1.72.82.25.13.42.19.48.3.06.11.06.65-.18 1.32z"/></svg>
+</a>
+
+<script>
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit() {
+    const inputs = document.querySelectorAll('#contact input, #contact textarea, #contact select');
+    let valid = true;
+    inputs.forEach(i => { if (i.value.trim() === '' && i.type !== 'date') valid = false; });
+    if (!valid) {
+      alert('Please fill in all required fields before sending your enquiry.');
+      return;
+    }
+    alert('Thank you for your enquiry! We will get back to you within 24 hours. 🌸');
+    inputs.forEach(i => i.value = '');
+  }
+</script>
+</body>
+</html>

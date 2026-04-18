@@ -72,6 +72,46 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--green-deep); transition: 0.3s; }
 
+    /* ─── CONTACT ROWS ─── */
+    .contact-rows {
+      background: var(--cream);
+      padding: 0.5rem 4rem 2rem 4rem;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .contact-row {
+      display: flex; align-items: flex-start; gap: 1.5rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    }
+    .contact-row:last-child {
+      border-bottom: none;
+    }
+    .row-icon {
+      font-size: 1.6rem; flex-shrink: 0; margin-top: 0.2rem;
+    }
+    .row-text {
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .row-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .row-value {
+      font-size: 1rem; font-weight: 500; color: var(--text-dark);
+      text-decoration: none; transition: color 0.3s;
+    }
+    .row-value:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 900px) {
+      .contact-rows { padding: 0.5rem 1.5rem 1.5rem 1.5rem; }
+      .contact-row { gap: 1rem; padding: 0.7rem 0; }
+      .row-icon { font-size: 1.4rem; }
+      .row-label { font-size: 0.7rem; }
+      .row-value { font-size: 0.95rem; }
+    }
+
     /* ─── HERO ─── */
     #hero {
       min-height: 100vh;
@@ -560,6 +600,52 @@
     }
     .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
 
+    /* ─── INSTAGRAM SECTION ─── */
+    #instagram {
+      background: var(--cream);
+      padding: 7rem 4rem;
+    }
+    .instagram-container {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .instagram-grid a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      aspect-ratio: 1;
+      background: var(--green-mid);
+    }
+    .instagram-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s, filter 0.3s;
+    }
+    .instagram-grid a:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.9);
+    }
+    .instagram-grid a::after {
+      content: '❤️';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .instagram-grid a:hover::after {
+      opacity: 1;
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background: var(--green-deep);
@@ -657,6 +743,9 @@
 
       .process-steps { grid-template-columns: 1fr 1fr; }
       .process-steps::before { display: none; }
+
+      #instagram { padding: 5rem 1.5rem; }
+      .instagram-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
 
       footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; gap: 0.8rem; }
       .footer-links { justify-content: center; }
@@ -761,6 +850,45 @@
     </div>
   </div>
 </section>
+
+<!-- CONTACT INFO ROWS -->
+<div class="contact-rows">
+  <div class="contact-row">
+    <span class="row-icon">📍</span>
+    <div class="row-text">
+      <div class="row-label">Location</div>
+      <div class="row-value">Ambelipadam Road, Behind TVS, Vyttla, Amballur, Ernakulam</div>
+    </div>
+  </div>
+  <div class="contact-row">
+    <span class="row-icon">📞</span>
+    <div class="row-text">
+      <div class="row-label">Phone</div>
+      <a href="tel:+919447573552" class="row-value">9447573552</a>
+    </div>
+  </div>
+  <div class="contact-row">
+    <span class="row-icon">💬</span>
+    <div class="row-text">
+      <div class="row-label">DM / WhatsApp</div>
+      <a href="https://wa.me/918330080551" target="_blank" class="row-value">+91 8330080551</a>
+    </div>
+  </div>
+  <div class="contact-row">
+    <span class="row-icon">✉️</span>
+    <div class="row-text">
+      <div class="row-label">Email</div>
+      <a href="mailto:hello@marionflowers.in" class="row-value">hello@marionflowers.in</a>
+    </div>
+  </div>
+  <div class="contact-row">
+    <span class="row-icon">🕐</span>
+    <div class="row-text">
+      <div class="row-label">Working Hours</div>
+      <div class="row-value">Mon – Sat: 8:00 AM – 8:00 PM | Sunday: 9:00 AM – 6:00 PM</div>
+    </div>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section id="about">
@@ -1176,6 +1304,23 @@
   </div>
 </section>
 
+<!-- INSTAGRAM FEED -->
+<section id="instagram">
+  <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 2rem;">
+    <span class="section-tag">Follow Us</span>
+    <h2 class="section-title">Latest from <em>Instagram</em></h2>
+    <div class="divider" style="margin:1.5rem auto;"></div>
+    <p class="section-desc">Follow @marion_flowers_decor for daily inspiration and fresh arrangements</p>
+  </div>
+  
+  <div class="instagram-container">
+    <div id="instagram-feed" class="instagram-grid"></div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="https://instagram.com/marion_flowers_decor" target="_blank" class="btn-primary">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">Marion Flowers <span>&</span> Decor</div>
@@ -1232,6 +1377,39 @@
     alert('Thank you for your enquiry! We will get back to you within 24 hours. 🌸');
     inputs.forEach(i => i.value = '');
   }
+
+  // Instagram Feed (using Instafeed.js)
+  // To activate: Replace 'YOUR_INSTAGRAM_API_TOKEN' with your actual token from instagram.com/developer
+  // Step 1: Go to https://www.instagram.com/developer/
+  // Step 2: Create an app and get your access token
+  // Step 3: Replace the token below
+  
+  function loadInstagramFeed() {
+    const igHandle = 'marion_flowers_decor'; // Replace with your Instagram handle
+    const feedContainer = document.getElementById('instagram-feed');
+    
+    // Load Instafeed.js library
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/instafeed.js@2.0.0/+esm';
+    script.onload = () => {
+      // Create feed - Note: Requires Instagram API access token
+      // For now, show a placeholder message
+      feedContainer.innerHTML = `
+        <div style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+          <p style="color: var(--text-mid); font-size: 1rem;">
+            🎉 Instagram feed will display here once configured with API access.
+          </p>
+          <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">
+            Click "Follow on Instagram" above to see our latest posts!
+          </p>
+        </div>
+      `;
+    };
+    document.head.appendChild(script);
+  }
+  
+  // Initialize Instagram feed on page load
+  window.addEventListener('load', loadInstagramFeed);
 </script>
 </body>
 </html>

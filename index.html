@@ -72,55 +72,44 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--green-deep); transition: 0.3s; }
 
-    /* ─── CONTACT BANNER ─── */
-    .contact-banner {
-      background: var(--green-deep);
-      color: var(--cream);
-      padding: 1rem 2rem;
-      box-shadow: 0 4px 12px rgba(26, 46, 26, 0.1);
-    }
-    .banner-content {
+    /* ─── CONTACT ROWS ─── */
+    .contact-rows {
+      background: var(--cream);
+      padding: 3rem 4rem;
       max-width: 1400px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-around; gap: 1.5rem;
-      flex-wrap: wrap;
     }
-    .banner-item {
-      display: flex; align-items: center; gap: 0.8rem;
-      flex: 1; min-width: 200px;
+    .contact-row {
+      display: flex; align-items: flex-start; gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
     }
-    .banner-icon {
-      font-size: 1.4rem; flex-shrink: 0;
+    .contact-row:last-child {
+      border-bottom: none;
     }
-    .banner-text {
-      display: flex; flex-direction: column;
+    .row-icon {
+      font-size: 1.6rem; flex-shrink: 0; margin-top: 0.2rem;
     }
-    .banner-label {
-      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--gold); opacity: 0.9;
+    .row-text {
+      display: flex; flex-direction: column; gap: 0.3rem;
     }
-    .banner-value {
-      font-size: 0.95rem; font-weight: 500; color: var(--cream);
+    .row-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .row-value {
+      font-size: 1rem; font-weight: 500; color: var(--text-dark);
       text-decoration: none; transition: color 0.3s;
     }
-    .banner-value:hover { color: var(--gold); }
-    .banner-divider {
-      width: 1px; height: 40px; background: rgba(201, 168, 76, 0.3);
-      display: none;
+    .row-value:hover {
+      color: var(--gold);
     }
 
     @media (max-width: 900px) {
-      .contact-banner { padding: 0.8rem 1rem; }
-      .banner-content { gap: 1rem; }
-      .banner-item { flex: 1 1 calc(50% - 0.5rem); min-width: auto; }
-      .banner-icon { font-size: 1.2rem; }
-      .banner-label { font-size: 0.6rem; }
-      .banner-value { font-size: 0.85rem; }
-      .banner-divider { display: none; }
-    }
-    @media (max-width: 600px) {
-      .contact-banner { padding: 0.6rem 1rem; }
-      .banner-item { flex: 1 1 100%; }
-      .banner-content { gap: 0.8rem; }
+      .contact-rows { padding: 2rem 1.5rem; }
+      .contact-row { gap: 1rem; padding: 1.2rem 0; }
+      .row-icon { font-size: 1.4rem; }
+      .row-label { font-size: 0.7rem; }
+      .row-value { font-size: 0.95rem; }
     }
 
     /* ─── HERO ─── */
@@ -862,47 +851,41 @@
   </div>
 </section>
 
-<!-- CONTACT INFO BANNER -->
-<div class="contact-banner">
-  <div class="banner-content">
-    <div class="banner-item">
-      <span class="banner-icon">📍</span>
-      <div class="banner-text">
-        <div class="banner-label">Location</div>
-        <div class="banner-value">Ambelipadam Rd, Vyttla, Amballur</div>
-      </div>
+<!-- CONTACT INFO ROWS -->
+<div class="contact-rows">
+  <div class="contact-row">
+    <span class="row-icon">📍</span>
+    <div class="row-text">
+      <div class="row-label">Location</div>
+      <div class="row-value">Ambelipadam Road, Behind TVS, Vyttla, Amballur, Ernakulam</div>
     </div>
-    <div class="banner-divider"></div>
-    <div class="banner-item">
-      <span class="banner-icon">📞</span>
-      <div class="banner-text">
-        <div class="banner-label">Phone</div>
-        <a href="tel:+919447573552" class="banner-value">9447573552</a>
-      </div>
+  </div>
+  <div class="contact-row">
+    <span class="row-icon">📞</span>
+    <div class="row-text">
+      <div class="row-label">Phone</div>
+      <a href="tel:+919447573552" class="row-value">9447573552</a>
     </div>
-    <div class="banner-divider"></div>
-    <div class="banner-item">
-      <span class="banner-icon">💬</span>
-      <div class="banner-text">
-        <div class="banner-label">WhatsApp</div>
-        <a href="https://wa.me/918330080551" target="_blank" class="banner-value">+91 8330080551</a>
-      </div>
+  </div>
+  <div class="contact-row">
+    <span class="row-icon">💬</span>
+    <div class="row-text">
+      <div class="row-label">DM / WhatsApp</div>
+      <a href="https://wa.me/918330080551" target="_blank" class="row-value">+91 8330080551</a>
     </div>
-    <div class="banner-divider"></div>
-    <div class="banner-item">
-      <span class="banner-icon">✉️</span>
-      <div class="banner-text">
-        <div class="banner-label">Email</div>
-        <a href="mailto:hello@marionflowers.in" class="banner-value">hello@marionflowers.in</a>
-      </div>
+  </div>
+  <div class="contact-row">
+    <span class="row-icon">✉️</span>
+    <div class="row-text">
+      <div class="row-label">Email</div>
+      <a href="mailto:hello@marionflowers.in" class="row-value">hello@marionflowers.in</a>
     </div>
-    <div class="banner-divider"></div>
-    <div class="banner-item">
-      <span class="banner-icon">🕐</span>
-      <div class="banner-text">
-        <div class="banner-label">Hours</div>
-        <div class="banner-value">Mon-Sat: 8AM-8PM | Sun: 9AM-6PM</div>
-      </div>
+  </div>
+  <div class="contact-row">
+    <span class="row-icon">🕐</span>
+    <div class="row-text">
+      <div class="row-label">Working Hours</div>
+      <div class="row-value">Mon – Sat: 8:00 AM – 8:00 PM | Sunday: 9:00 AM – 6:00 PM</div>
     </div>
   </div>
 </div>
